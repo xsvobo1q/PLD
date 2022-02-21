@@ -1,0 +1,14 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Note: 
+================================================================
+Simulation PASSED (no erros)!
+================================================================
+
+Time: 2560 ns  Iteration: 0  Process: /simple_adder_tb/line__48  File: D:/Documents/xsvobo1q/PLD/cv3/adder_demo/adder_demo.srcs/sim_1/imports/cv1/testbench.vhd
+Note: 
+================================================================
+Simulation PASSED (no erros)!
+================================================================
+
+Time: 2560 ns  Iteration: 0  Process: /simple_adder_tb/line__48  File: D:/Documents/xsvobo1q/PLD/cv3/adder_demo/adder_demo.srcs/sim_1/imports/cv1/testbench.vhd

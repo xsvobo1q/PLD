@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../adder_demo.srcs/sources_1/imports/cv1/design.vhd" \
+"../../../../adder_demo.srcs/sources_1/imports/Templates/RP_top.vhd" \
+"../../../../adder_demo.srcs/sim_1/imports/cv1/testbench.vhd" \
+
+# Do not sort compile order
+nosort

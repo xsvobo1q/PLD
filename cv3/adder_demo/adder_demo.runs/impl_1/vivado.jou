@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Feb 21 09:34:04 2022
+# Process ID: 6388
+# Current directory: D:/Documents/xsvobo1q/PLD/cv3/adder_demo/adder_demo.runs/impl_1
+# Command line: vivado.exe -log RP_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source RP_top.tcl -notrace
+# Log file: D:/Documents/xsvobo1q/PLD/cv3/adder_demo/adder_demo.runs/impl_1/RP_top.vdi
+# Journal file: D:/Documents/xsvobo1q/PLD/cv3/adder_demo/adder_demo.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source RP_top.tcl -notrace
