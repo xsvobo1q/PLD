@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Feb 28 10:38:39 2022
+# Process ID: 9656
+# Current directory: D:/Documents/PLD/cv4/counter_32bit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3756 D:\Documents\PLD\cv4\counter_32bit\counter_32bit.xpr
+# Log file: D:/Documents/PLD/cv4/counter_32bit/vivado.log
+# Journal file: D:/Documents/PLD/cv4/counter_32bit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Documents/PLD/cv4/counter_32bit/counter_32bit.xpr

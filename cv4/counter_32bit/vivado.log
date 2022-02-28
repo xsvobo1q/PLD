@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Feb 28 10:38:39 2022
+# Process ID: 9656
+# Current directory: D:/Documents/PLD/cv4/counter_32bit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3756 D:\Documents\PLD\cv4\counter_32bit\counter_32bit.xpr
+# Log file: D:/Documents/PLD/cv4/counter_32bit/vivado.log
+# Journal file: D:/Documents/PLD/cv4/counter_32bit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Documents/PLD/cv4/counter_32bit/counter_32bit.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Documents/xsvobo1q/PLD/cv4/counter_32bit' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Appz/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 837.770 ; gain = 215.422
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 28 10:39:07 2022...

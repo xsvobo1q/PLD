@@ -1,0 +1,5 @@
+Fmax = 246,26 MHz
+LUT   65
+FF    65
+PWR   107 mW
+Slack  15,941 ns
