@@ -1,0 +1,72 @@
+V 000051 55 964           1646598203724 Behavioral
+(_unit VHDL(ce_gen 0 6(behavioral 0 18))
+	(_version ve8)
+	(_time 1646598203725 2022.03.06 15:23:23)
+	(_source(\../design.vhd\))
+	(_parameters tan vhdl2019)
+	(_code c89bcf9dc59ccadece98dd92cccecbcecdcd9ececf)
+	(_ent
+		(_time 1646598203722)
+	)
+	(_object
+		(_gen(_int DIV_FACT -1 0 9(_ent gms)))
+		(_port(_int clk -2 0 13(_ent(_in)(_event))))
+		(_port(_int ce_o -2 0 14(_ent(_out((i 2))))))
+		(_type(_int ~POSITIVE~range~1~to~DIV_FACT+1~13 0 19(_scalar (_to i 1 c 1))))
+		(_sig(_int cnt_sig 0 0 19(_arch(_uni((i 1))))))
+		(_prcs
+			(line__21(_arch 0 0 21(_prcs(_simple)(_trgt(1)(2))(_sens(0))(_read(2)))))
+		)
+		(_type(_ext ~extstd.standard.POSITIVE(0 POSITIVE)))
+		(_type(_ext ~extieee.std_logic_1164.STD_LOGIC(1 STD_LOGIC)))
+		(_type(_ext ~extieee.std_logic_1164.STD_ULOGIC(1 STD_ULOGIC)))
+		(_type(_ext ~extstd.standard.INTEGER(0 INTEGER)))
+	)
+	(_use(std(standard))(ieee(std_logic_1164))(ieee(NUMERIC_STD)))
+	(_model . Behavioral 2 -1)
+)
+V 000051 55 1035          1646598203734 Behavioral
+(_unit VHDL(ce_gen_tb 0 6(behavioral 0 9))
+	(_version ve8)
+	(_time 1646598203735 2022.03.06 15:23:23)
+	(_source(\../testbench.vhd\))
+	(_parameters tan vhdl2019)
+	(_code c89bcf9dc59ccadecd98dd92cccd9ecfcccecacecb)
+	(_ent
+		(_time 1646598203732)
+	)
+	(_comp
+		(ce_gen
+			(_object
+				(_gen(_int DIV_FACT -1 0 12(_ent)))
+				(_port(_int clk -2 0 15(_ent (_in))))
+				(_port(_int ce_o -2 0 16(_ent (_out))))
+			)
+		)
+	)
+	(_inst ce_gen_i 0 24(_comp ce_gen)
+		(_gen
+			((DIV_FACT)((i 5)))
+		)
+		(_port
+			((clk)(clk_sig))
+			((ce_o)(ce_o_sig))
+		)
+		(_use(_ent . ce_gen)
+			(_gen
+				((DIV_FACT)((i 5)))
+			)
+		)
+	)
+	(_object
+		(_sig(_int clk_sig -2 0 20(_arch(_uni))))
+		(_sig(_int ce_o_sig -2 0 21(_arch(_uni))))
+		(_prcs
+			(line__35(_arch 0 0 35(_prcs(_wait_for)(_trgt(0)))))
+		)
+		(_type(_ext ~extstd.standard.POSITIVE(0 POSITIVE)))
+		(_type(_ext ~extieee.std_logic_1164.STD_LOGIC(1 STD_LOGIC)))
+	)
+	(_use(std(standard))(ieee(std_logic_1164))(ieee(NUMERIC_STD)))
+	(_model . Behavioral 1 -1)
+)

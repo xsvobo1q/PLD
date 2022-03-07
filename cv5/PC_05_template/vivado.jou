@@ -1,0 +1,113 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Mar  7 08:45:31 2022
+# Process ID: 11360
+# Current directory: D:/Documents/xsvobo1q/PLD/cv5/PC_05_template
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10536 D:\Documents\xsvobo1q\PLD\cv5\PC_05_template\Stopwatch.xpr
+# Log file: D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/vivado.log
+# Journal file: D:/Documents/xsvobo1q/PLD/cv5/PC_05_template\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.xpr
+update_compile_order -fileset sources_1
+file mkdir D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new
+close [ open D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd w ]
+add_files D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source ce_gen_tb.tcl
+restart
+run all
+add_bp {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} 25
+add_bp {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} 26
+add_bp {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} 27
+add_bp {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} 28
+add_bp {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} 29
+remove_bps -file {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} -line 29
+remove_bps -file {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} -line 28
+remove_bps -file {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} -line 27
+remove_bps -file {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} -line 26
+remove_bps -file {D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/ce_gen.vhd} -line 25
+restart
+run all
+restart
+run all
+close [ open D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/btn_in.vhd w ]
+add_files D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/btn_in.vhd
+update_compile_order -fileset sources_1
+close [ open D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/sync_reg.vhd w ]
+add_files D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/sync_reg.vhd
+update_compile_order -fileset sources_1
+close [ open D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/debouncer.vhd w ]
+add_files D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/debouncer.vhd
+update_compile_order -fileset sources_1
+run all
+close_sim
+launch_simulation
+source ce_gen_tb.tcl
+close_sim
+launch_simulation
+source ce_gen_tb.tcl
+restart
+run all
+close_sim
+launch_simulation
+source ce_gen_tb.tcl
+close_sim
+launch_simulation
+source ce_gen_tb.tcl
+restart
+run all
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source ce_gen_tb.tcl
+close [ open D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/edge_detector.vhd w ]
+add_files D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.srcs/sources_1/new/edge_detector.vhd
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source ce_gen_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top btn_in_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+close_sim
+launch_simulation
+launch_simulation
+source btn_in_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+source btn_in_tb.tcl
+restart
+run all
+close_sim
+launch_simulation
+source btn_in_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+source btn_in_tb.tcl
+close_sim
+launch_simulation
+source btn_in_tb.tcl
+close_sim
+launch_simulation
+source btn_in_tb.tcl
+close_sim
+launch_simulation
+source btn_in_tb.tcl
+restart
+run 1 us
+close_sim
+close_project

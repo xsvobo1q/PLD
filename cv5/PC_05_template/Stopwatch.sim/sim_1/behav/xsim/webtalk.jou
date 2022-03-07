@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Mar  7 10:25:11 2022
+# Process ID: 8620
+# Current directory: D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.sim/sim_1/behav/xsim/xsim.dir/btn_in_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/Stopwatch.sim/sim_1/behav/xsim/xsim.dir/btn_in_tb_behav/webtalk/xsim_webtalk.tcl -notrace
