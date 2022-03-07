@@ -16,7 +16,7 @@ END rp_top;
 ARCHITECTURE Structural OF rp_top IS
 ----------------------------------------------------------------------------------
 
-  SIGNAL cnt_help_sig : STD_LOGIC_VECTOR(31 DOWNTO 0); 
+  SIGNAL cnt_sig : STD_LOGIC_VECTOR(31 DOWNTO 0); 
 
   COMPONENT seg_disp_driver
   PORT (
@@ -66,10 +66,10 @@ BEGIN
   seg_disp_driver_i : seg_disp_driver
   PORT MAP (
     clk                 => CLK,
-    dig_1_i             => cnt_help_sig(31 DOWNTO 28),
-    dig_2_i             => cnt_help_sig(27 DOWNTO 24),
-    dig_3_i             => cnt_help_sig(23 DOWNTO 20),
-    dig_4_i             => cnt_help_sig(19 DOWNTO 16),
+    dig_1_i             => cnt_sig(31 DOWNTO 28),
+    dig_2_i             => cnt_sig(27 DOWNTO 24),
+    dig_3_i             => cnt_sig(23 DOWNTO 20),
+    dig_4_i             => cnt_sig(19 DOWNTO 16),
     dp_i                => "0000",
     dots_i              => "011",
     disp_seg_o          => DISP_SEG,
@@ -85,10 +85,10 @@ BEGIN
     srst               => BTN(2),
     cnt_load           => BTN(1),
     cnt_up             => SW(3),
-    cnt                => cnt_help_sig
+    cnt                => cnt_sig
   );
   
-  LED <= cnt_help_sig(31 DOWNTO 24);
+  LED <= cnt_sig(31 DOWNTO 24);
 ----------------------------------------------------------------------------------
 END Structural;
 ----------------------------------------------------------------------------------
