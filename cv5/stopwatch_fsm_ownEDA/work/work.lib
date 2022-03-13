@@ -1,0 +1,36 @@
+timestamp=1647207492005
+
+[~A]
+ModifyID=1
+Version=74
+
+[~MFT]
+0=14|0work.mgf|4583|0
+1=2|1work.mgf|1512|0
+3=2|3work.mgf|863|0
+
+[stopwatch_fsm]
+A/behavioral=A/Behavioral 21|../design.vhd|45|1*0
+BinL64/behavioral=3*0
+I=0*690
+I/behavioral=I/Behavioral 0*2179
+M=11|1|ve8|1647207491984|../design.vhd|0*235*0x6520ac3ae0e7548687b5714e2c9ec44a79e37282|0*610*0xd986fd7175c8cf28cd774bcadde79966
+M/behavioral=M/Behavioral 21|1|ve8|1647207491986|../design.vhd|0*934*0x8df645928bf1b4a5f2ba56ea1ac4a42a2e6c5597|0*2085*0xb966535deb9617f745ced53ae4cc1a7f
+R=../design.vhd|34
+Version=2020.04.130 (Linux64)|00000006789c53d0353230b40400039a011a|bd40250fcd3a3fb0d413fcee5bbe411a3bd9a2e874179565e38c1b3fe190de8afdd567b3c9b9cdc431963e5ae7b51baa
+Version/behavioral=2020.04.130 (Linux64)|00000006789c53d0353230b40400039a011a|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff42069c78d7b792162ff59ced168a6f4d7
+
+[testbench]
+A/behavioral=A/Behavioral 21|../testbench.vhd|9|1*1512
+BinL64/behavioral=3*863
+I=0*2828
+I/behavioral=I/Behavioral 0*4583
+M=11|1|ve8|1647207491999|../testbench.vhd|0*2558*0xdfd4d73e79c4723df1f1ff703edde2b20a4e801d|0*2749*0xd986fd7175c8cf28cd774bcadde79966
+M/behavioral=M/Behavioral 21|1|ve8|1647207492001|../testbench.vhd|0*3068*0xee975c90f6873e3043949bb7f60959676b85b6ed|0*4490*0xb966535deb9617f745ced53ae4cc1a7f
+R=../testbench.vhd|6
+Version=2020.04.130 (Linux64)|00000006789c53d0353230b40400039a011a|9c08cd30fe0f9550ac0d051aa32c9ba5030c5f4de3ffa3c97f58c5528f1d79132147eb6459b47ef19394f3c6b3dafce9
+Version/behavioral=2020.04.130 (Linux64)|00000006789c53d0353230b40400039a011a|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff474cf776a7db63b0743eb4f10bf76f6f3
+
+[~U]
+stopwatch_fsm=11|0*0|
+testbench=11|0*2434|
