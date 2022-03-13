@@ -61,7 +61,7 @@ BEGIN
     END IF;
   END PROCESS;
 
-  PROCESS (st_sp, lap_clr) BEGIN
+  PROCESS (st_sp, lap_clr, pres_state) BEGIN
     CASE pres_state IS
     
       WHEN st_idle =>
@@ -92,6 +92,9 @@ BEGIN
         ELSIF st_sp = '0' AND lap_clr = '1' THEN
           next_state <= st_idle;
         END IF;
+        
+      WHEN OTHERS => 
+        next_state <= st_idle;
       
     END CASE;
   END PROCESS;
