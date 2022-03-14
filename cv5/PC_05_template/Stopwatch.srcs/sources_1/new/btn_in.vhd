@@ -40,9 +40,9 @@ ENTITY btn_in IS
     ce                          : IN  STD_LOGIC;
     btn                         : IN  STD_LOGIC;
     btn_debounced               : OUT STD_LOGIC := '0';
-    btn_egde_pos                : OUT STD_LOGIC := '0';
-    btn_egde_neg                : OUT STD_LOGIC := '0';
-    btn_egde_any                : OUT STD_LOGIC := '0'
+    btn_edge_pos                : OUT STD_LOGIC := '0';
+    btn_edge_neg                : OUT STD_LOGIC := '0';
+    btn_edge_any                : OUT STD_LOGIC := '0'
   );
 END btn_in;
 --------------------------------------------------------------------
@@ -105,9 +105,9 @@ BEGIN
   PORT MAP(
     clk => clk,
     sig_in => btn_deb_sig,
-    edge_pos => btn_egde_pos,
-    edge_neg => btn_egde_neg, 
-    edge_any => btn_egde_any
+    edge_pos => btn_edge_pos,
+    edge_neg => btn_edge_neg, 
+    edge_any => btn_edge_any
   );
   
   btn_debounced <= btn_deb_sig;

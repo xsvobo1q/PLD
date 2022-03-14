@@ -28,22 +28,24 @@ BEGIN
 
   PROCESS (clk)
   BEGIN
-    IF rising_edge(clk) AND ce_100Hz = '1' THEN
+    IF rising_edge(clk) THEN
       IF cnt_reset = '1' THEN
         cnt_0_sig <= (OTHERS => '0');
         cnt_1_sig <= (OTHERS => '0');
         cnt_2_sig <= (OTHERS => '0');
         cnt_3_sig <= (OTHERS => '0');
-      ELSE
+      END IF;
+      
+      IF disp_enable = '1' THEN
+        cnt_0 <= cnt_0_sig;
+        cnt_1 <= cnt_1_sig;
+        cnt_2 <= cnt_2_sig;
+        cnt_3 <= cnt_3_sig;
+      END IF;
+      
+      IF ce_100Hz = '1' THEN
         IF cnt_enable = '1' THEN
           cnt_0_sig <= STD_LOGIC_VECTOR(UNSIGNED(cnt_0_sig) + 1);
-        END IF;
-        
-        IF disp_enable = '1' THEN
-          cnt_0 <= cnt_0_sig;
-          cnt_1 <= cnt_1_sig;
-          cnt_2 <= cnt_2_sig;
-          cnt_3 <= cnt_3_sig;
         END IF;
         
         IF cnt_0_sig = "1001" THEN
@@ -60,8 +62,7 @@ BEGIN
           cnt_1_sig <= (OTHERS => '0');
           cnt_2_sig <= (OTHERS => '0');
           cnt_3_sig <= (OTHERS => '0');
-        END IF;
-        
+        END IF;   
       END IF;
     END IF;
   END PROCESS;

@@ -32,7 +32,7 @@ ARCHITECTURE Structural OF rp_top IS
   
   COMPONENT ce_gen
   GENERIC(
-    DIV_FACT        : POSITIVE := 2 
+    DIV_FACT        : POSITIVE := 500000 
   );
   PORT(
     clk     :  IN STD_LOGIC;
@@ -41,6 +41,46 @@ ARCHITECTURE Structural OF rp_top IS
     ce_out  :  OUT STD_LOGIC := '0'            
   );
   END COMPONENT ce_gen;
+  
+  COMPONENT btn_in
+  GENERIC(
+    DEB_PERIOD                  : POSITIVE := 5
+  );
+  PORT(
+    clk                         : IN  STD_LOGIC;
+    ce                          : IN  STD_LOGIC;
+    btn                         : IN  STD_LOGIC;
+    btn_debounced               : OUT STD_LOGIC := '0';
+    btn_edge_pos                : OUT STD_LOGIC := '0';
+    btn_edge_neg                : OUT STD_LOGIC := '0';
+    btn_edge_any                : OUT STD_LOGIC := '0'
+  );
+  END COMPONENT btn_in;
+  
+  COMPONENT stopwatch
+  PORT(
+    clk            : IN STD_LOGIC;
+    cnt_reset      : IN STD_LOGIC;
+    cnt_enable     : IN STD_LOGIC;
+    ce_100Hz       : IN STD_LOGIC;
+    disp_enable    : IN STD_LOGIC;
+    cnt_0          : OUT STD_LOGIC_VECTOR (3 DOWNTO 0) := (OTHERS => '0');
+    cnt_1          : OUT STD_LOGIC_VECTOR (3 DOWNTO 0) := (OTHERS => '0');
+    cnt_2          : OUT STD_LOGIC_VECTOR (3 DOWNTO 0) := (OTHERS => '0');
+    cnt_3          : OUT STD_LOGIC_VECTOR (3 DOWNTO 0) := (OTHERS => '0')
+  );
+  END COMPONENT stopwatch;
+  
+  COMPONENT stopwatch_fsm
+  PORT(
+    clk           : IN STD_LOGIC;
+    st_sp         : IN STD_LOGIC  := '0';
+    lap_clr       : IN STD_LOGIC  := '0';
+    cnt_reset     : OUT STD_LOGIC := '0';
+    cnt_enable    : OUT STD_LOGIC := '0';
+    disp_enable   : OUT STD_LOGIC := '0'
+  );
+  END COMPONENT stopwatch_fsm;
 
   ------------------------------------------------------------------------------
 
@@ -48,6 +88,14 @@ ARCHITECTURE Structural OF rp_top IS
   SIGNAL cnt_1              : STD_LOGIC_VECTOR( 3 DOWNTO 0);
   SIGNAL cnt_2              : STD_LOGIC_VECTOR( 3 DOWNTO 0);
   SIGNAL cnt_3              : STD_LOGIC_VECTOR( 3 DOWNTO 0);
+  SIGNAL cnt_reset          : STD_LOGIC;
+  SIGNAL cnt_enable         : STD_LOGIC;
+  SIGNAL disp_enable        : STD_LOGIC;
+  SIGNAL ce_100Hz           : STD_LOGIC;
+  SIGNAL btn_debounced      : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+  SIGNAL btn_edge_pos       : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+  SIGNAL btn_edge_neg       : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+  SIGNAL btn_edge_any       : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
   
   SIGNAL ce_in_sig : STD_LOGIC;
 
@@ -88,29 +136,59 @@ BEGIN
   -- clock enable generator
   ce_gen_i : ce_gen
   GENERIC MAP(
-    DIV_FACT  =>  10
+    DIV_FACT  =>  500000
   )
   PORT MAP(
-    clk => clk,
-    srst => btn_i(0),
-    ce_in => ce_in_sig
+    clk    => clk,
+    srst   => '0',
+    ce_in  => '1',
+    ce_out => ce_100Hz
   );
-  
   
   --------------------------------------------------------------------------------
   -- button input module
-
-
+  gen_btn_in: FOR i IN 0 TO 3 GENERATE
+    btn_in_inst : btn_in
+    GENERIC MAP(
+      DEB_PERIOD => 5
+    )
+    PORT MAP(
+      clk => clk,
+      ce => ce_100Hz,
+      btn => btn_i(i),
+      btn_debounced => btn_debounced(i),
+      btn_edge_pos => btn_edge_pos(i),
+      btn_edge_neg => btn_edge_neg(i),
+      btn_edge_any => btn_edge_any(i)
+    );
+  END GENERATE gen_btn_in;
 
   --------------------------------------------------------------------------------
   -- stopwatch module (4-decade BCD counter)
-
-
-
+  stopwatch_i : stopwatch
+  PORT MAP(
+    clk         => clk,
+    cnt_reset   => cnt_reset,
+    cnt_enable  => cnt_enable,
+    ce_100Hz    => ce_100Hz,
+    disp_enable => disp_enable,
+    cnt_0       => cnt_0,
+    cnt_1       => cnt_1,
+    cnt_2       => cnt_2,
+    cnt_3       => cnt_3
+  );
+  
   --------------------------------------------------------------------------------
   -- stopwatch control FSM
-
-
+  stopwatch_fsm_i : stopwatch_fsm
+  PORT MAP(
+    clk         => clk,
+    st_sp       => btn_edge_pos(0),
+    lap_clr     => btn_edge_pos(3),
+    cnt_reset   => cnt_reset,    
+    cnt_enable  => cnt_enable,
+    disp_enable => disp_enable
+  );
 
 ----------------------------------------------------------------------------------
 END Structural;

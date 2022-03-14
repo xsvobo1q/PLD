@@ -67,6 +67,8 @@ BEGIN
       WHEN st_idle =>
         IF st_sp = '1' THEN
           next_state <= st_run;
+        ELSE
+          next_state <= st_idle;
         END IF;
       
       WHEN st_run =>
@@ -74,6 +76,8 @@ BEGIN
           next_state <= st_stop;
         ELSIF st_sp = '0' AND lap_clr = '1' THEN
           next_state <= st_lap;
+        ELSE
+          next_state <= st_run;
         END IF;
         
       WHEN st_lap =>
@@ -81,6 +85,8 @@ BEGIN
           next_state <= st_run;
         ELSIF st_sp = '0' AND lap_clr = '1' THEN
           next_state <= st_refresh;
+        ELSE
+          next_state <= st_lap;
         END IF;
         
       WHEN st_refresh =>
@@ -91,10 +97,12 @@ BEGIN
           next_state <= st_run;
         ELSIF st_sp = '0' AND lap_clr = '1' THEN
           next_state <= st_idle;
+        ELSE
+          next_state <= st_stop;
         END IF;
         
       WHEN OTHERS => 
-        next_state <= st_idle;
+        next_state <= st_idle;     -- default state
       
     END CASE;
   END PROCESS;

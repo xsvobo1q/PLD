@@ -1,0 +1,44 @@
+
+*** Running vivado
+    with args -log rp_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source rp_top.tcl -notrace
+
+
+****** Vivado v2019.2.1 (64-bit)
+  **** SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+  **** IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source rp_top.tcl -notrace
+Command: link_design -top rp_top -part xc7z010clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-454] Reading design checkpoint 'D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/SOURCES/seg_disp_driver.dcp' for cell 'seg_disp_driver_i'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 671.852 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/SOURCES/rp_top.xdc]
+Finished Parsing XDC File [D:/Documents/xsvobo1q/PLD/cv5/PC_05_template/SOURCES/rp_top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 794.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+8 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 794.324 ; gain = 429.477
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.758 . Memory (MB): peak = 813.348 ; gain = 19.023
+
+Starting Cache Timing Information Task
