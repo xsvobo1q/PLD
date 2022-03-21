@@ -30,10 +30,10 @@ BEGIN
     IF rising_edge(clk) THEN
     
       IF (UART_Tx_start = '1' AND NOT(UART_Tx_busy_sig)) THEN
-      UART_data_reg <= '1' & UART_Data_in & '0';
-      UART_Tx_busy <= '1';
-      UART_Tx_busy_sig <= TRUE;
-      Tx_enable <= TRUE;
+        UART_data_reg <= '1' & UART_Data_in & '0';
+        UART_Tx_busy <= '1';
+        UART_Tx_busy_sig <= TRUE;
+        Tx_enable <= TRUE;
       END IF;
     
       IF (UART_clk_EN = '1') THEN
