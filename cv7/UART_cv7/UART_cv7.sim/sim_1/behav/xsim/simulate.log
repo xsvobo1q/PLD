@@ -1,0 +1,9 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Note: ================================================================
+Time: 21100 ns  Iteration: 0  Process: /UART_Tx_block_tb/UART_Tx_stimuli  File: D:/Documents/xsvobo1q/PLD/cv7/SOURCES/UART_Tx_block_tb.vhd
+Note: Simulation finished!
+Time: 21100 ns  Iteration: 0  Process: /UART_Tx_block_tb/UART_Tx_stimuli  File: D:/Documents/xsvobo1q/PLD/cv7/SOURCES/UART_Tx_block_tb.vhd
+Failure: ================================================================
+Time: 21100 ns  Iteration: 0  Process: /UART_Tx_block_tb/UART_Tx_stimuli  File: D:/Documents/xsvobo1q/PLD/cv7/SOURCES/UART_Tx_block_tb.vhd
+$finish called at time : 21100 ns : File "D:/Documents/xsvobo1q/PLD/cv7/SOURCES/UART_Tx_block_tb.vhd" Line 107
