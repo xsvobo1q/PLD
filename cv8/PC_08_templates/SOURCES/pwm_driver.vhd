@@ -27,54 +27,33 @@ BEGIN
 ----------------------------------------------------------------------------------
 counter : PROCESS (clk) BEGIN
   IF rising_edge(clk) THEN
+  
     IF cnt = X"FF" THEN
       cnt <= X"01";
     ELSE
       cnt <= STD_LOGIC_VECTOR(UNSIGNED(cnt) + 1);
     END IF;
     CNT_OUT <= cnt;
+    
   END IF;
-END PROCESS;
+END PROCESS counter;
 
-pwm : PROCESS (clk) BEGIN
+
+pwm_drivers : PROCESS (clk) BEGIN
   IF rising_edge(clk) THEN
   
-    PWM_OUT <= (OTHERS => '0');
-  
-    IF cnt <= PWM_REF_0 THEN
-      PWM_OUT(0) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_1 THEN
-      PWM_OUT(1) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_2 THEN
-      PWM_OUT(2) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_3 THEN
-      PWM_OUT(3) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_4 THEN
-      PWM_OUT(4) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_5 THEN
-      PWM_OUT(5) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_6 THEN
-      PWM_OUT(6) <= '1';
-    END IF;
-    
-    IF cnt <= PWM_REF_7 THEN
-      PWM_OUT(7) <= '1';
-    END IF;
+    PWM_OUT <= (OTHERS => '0'); 
+    IF cnt <= PWM_REF_0 THEN PWM_OUT(0) <= '1'; END IF;
+    IF cnt <= PWM_REF_1 THEN PWM_OUT(1) <= '1'; END IF;
+    IF cnt <= PWM_REF_2 THEN PWM_OUT(2) <= '1'; END IF;
+    IF cnt <= PWM_REF_3 THEN PWM_OUT(3) <= '1'; END IF;
+    IF cnt <= PWM_REF_4 THEN PWM_OUT(4) <= '1'; END IF;
+    IF cnt <= PWM_REF_5 THEN PWM_OUT(5) <= '1'; END IF;
+    IF cnt <= PWM_REF_6 THEN PWM_OUT(6) <= '1'; END IF;
+    IF cnt <= PWM_REF_7 THEN PWM_OUT(7) <= '1'; END IF;
  
   END IF;
-END PROCESS;
+END PROCESS pwm_drivers;
 ----------------------------------------------------------------------------------
 END Behavioral;
 ----------------------------------------------------------------------------------
