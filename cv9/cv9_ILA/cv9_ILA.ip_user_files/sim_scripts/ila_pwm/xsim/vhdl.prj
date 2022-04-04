@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../../SOURCES/IP/ila_pwm/sim/ila_pwm.vhd" \
+
+nosort

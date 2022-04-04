@@ -1,0 +1,2 @@
+ila_pwm.vhd,vhdl,xil_defaultlib,../../../../../SOURCES/IP/ila_pwm/sim/ila_pwm.vhd,incdir="../../../../../SOURCES/IP/ila_pwm/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -56,6 +56,8 @@ ARCHITECTURE Structural OF rp_top IS
     ce_o                : OUT STD_LOGIC);
   END COMPONENT;
   
+  -------------------------------------------------------------------------------------
+  
   COMPONENT pwm_driver
   PORT(
     CLK                 : IN  STD_LOGIC;
@@ -71,6 +73,41 @@ ARCHITECTURE Structural OF rp_top IS
     CNT_OUT             : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
   );
   END COMPONENT pwm_driver;
+  
+  ---------------------------------------------------------------------------
+  
+  COMPONENT vio_pwm
+  PORT (
+    clk         : IN STD_LOGIC;
+    probe_in0   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_in1   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out0  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out1  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out2  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out3  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out4  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out5  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out6  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out7  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    probe_out8  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    probe_out9  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    probe_out10 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    probe_out11 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+  );
+END COMPONENT;
+
+---------------------------------------------------------------------------------
+
+COMPONENT ila_pwm
+
+PORT (
+	clk : IN STD_LOGIC;
+	probe0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+	probe1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+	probe2 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	probe3 : IN STD_LOGIC_VECTOR(3 DOWNTO 0)
+);
+END COMPONENT  ;
 
   --------------------------------------------------------------------------------
 
@@ -80,6 +117,22 @@ ARCHITECTURE Structural OF rp_top IS
   SIGNAL btn_posedge_o      : STD_LOGIC_VECTOR( 3 DOWNTO 0);
   SIGNAL btn_negedge_o      : STD_LOGIC_VECTOR( 3 DOWNTO 0);
   SIGNAL btn_edge_o         : STD_LOGIC_VECTOR( 3 DOWNTO 0);
+  SIGNAL PWM_OUT_s          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL CNT_OUT_s          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  
+  SIGNAL PWM_REF_7          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_6          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_5          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_4          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_3          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_2          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_1          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  SIGNAL PWM_REF_0          : STD_LOGIC_VECTOR( 7 DOWNTO 0);
+  
+  SIGNAL DIG_1_s            : STD_LOGIC_VECTOR( 3 DOWNTO 0);
+  SIGNAL DIG_2_s            : STD_LOGIC_VECTOR( 3 DOWNTO 0);
+  SIGNAL DIG_3_s            : STD_LOGIC_VECTOR( 3 DOWNTO 0);
+  SIGNAL DIG_4_s            : STD_LOGIC_VECTOR( 3 DOWNTO 0);
 
 ----------------------------------------------------------------------------------
 BEGIN
@@ -128,10 +181,10 @@ BEGIN
   seg_disp_driver_i : seg_disp_driver
   PORT MAP(
     clk                 => clk,
-    dig_1_i             => "0000",
-    dig_2_i             => "0000",
-    dig_3_i             => "0000",
-    dig_4_i             => "0000",
+    dig_1_i             => DIG_1_s,
+    dig_2_i             => DIG_2_s,
+    dig_3_i             => DIG_3_s,
+    dig_4_i             => DIG_4_s,
     dp_i                => "0000",
     dots_i              => "011",
     disp_seg_o          => disp_seg_o,
@@ -142,17 +195,51 @@ BEGIN
   pwm_driver_i : pwm_driver
   PORT MAP(
     CLK                 => clk,
-    PWM_REF_7           => "11111111",
-    PWM_REF_6           => "01111111",
-    PWM_REF_5           => "00111111",
-    PWM_REF_4           => "00011111",
-    PWM_REF_3           => "00000111",
-    PWM_REF_2           => "00000011",
-    PWM_REF_1           => "00000001",
-    PWM_REF_0           => "00000000",
-    PWM_OUT             => led_o,
-    CNT_OUT             => OPEN
+    PWM_REF_7           => PWM_REF_7,
+    PWM_REF_6           => PWM_REF_6,
+    PWM_REF_5           => PWM_REF_5,
+    PWM_REF_4           => PWM_REF_4,
+    PWM_REF_3           => PWM_REF_3,
+    PWM_REF_2           => PWM_REF_2,
+    PWM_REF_1           => PWM_REF_1,
+    PWM_REF_0           => PWM_REF_0,
+    PWM_OUT             => PWM_OUT_s,
+    CNT_OUT             => CNT_OUT_s
   );
+  
+  -------------------------------------------------------------------------------
+  
+  vio_pwm_i : vio_pwm
+  PORT MAP (
+    clk         => clk,
+    probe_in0   => PWM_OUT_s,
+    probe_in1   => CNT_OUT_s,
+    probe_out0  => PWM_REF_0,
+    probe_out1  => PWM_REF_1,
+    probe_out2  => PWM_REF_2,
+    probe_out3  => PWM_REF_3,
+    probe_out4  => PWM_REF_4,
+    probe_out5  => PWM_REF_5,
+    probe_out6  => PWM_REF_6,
+    probe_out7  => PWM_REF_7,
+    probe_out8  => DIG_1_s,
+    probe_out9  => DIG_2_s,
+    probe_out10 => DIG_3_s,
+    probe_out11 => DIG_4_s
+  );
+  
+  --------------------------------------------------------------------------------
+  
+  ila_pwm_i : ila_pwm
+PORT MAP (
+	clk => clk,
+	probe0 => PWM_OUT_s,
+	probe1 => CNT_OUT_s,
+	probe2 => btn_i,
+	probe3 => sw_i
+);
+
+led_o <= PWM_OUT_s;
 
 ----------------------------------------------------------------------------------
 END Structural;

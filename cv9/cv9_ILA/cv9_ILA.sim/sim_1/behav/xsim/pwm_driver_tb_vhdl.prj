@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../PC_08_templates/SOURCES/pwm_driver.vhd" \
+"../../../../../PC_08_templates/SOURCES/pwm_driver_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Apr  4 09:31:41 2022
+# Process ID: 10512
+# Current directory: D:/Documents/PLD/cv9/cv9_ILA/cv9_ILA.runs/vio_pwm_synth_1
+# Command line: vivado.exe -log vio_pwm.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vio_pwm.tcl
+# Log file: D:/Documents/PLD/cv9/cv9_ILA/cv9_ILA.runs/vio_pwm_synth_1/vio_pwm.vds
+# Journal file: D:/Documents/PLD/cv9/cv9_ILA/cv9_ILA.runs/vio_pwm_synth_1\vivado.jou
+#-----------------------------------------------------------
+source vio_pwm.tcl -notrace

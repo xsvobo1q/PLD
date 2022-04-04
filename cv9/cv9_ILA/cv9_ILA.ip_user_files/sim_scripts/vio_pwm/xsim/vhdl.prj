@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../../SOURCES/IP/vio_pwm/sim/vio_pwm.vhd" \
+
+nosort
