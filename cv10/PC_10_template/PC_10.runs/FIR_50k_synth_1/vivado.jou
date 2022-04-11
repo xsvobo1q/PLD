@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Apr 11 08:54:55 2022
+# Process ID: 8204
+# Current directory: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.runs/FIR_50k_synth_1
+# Command line: vivado.exe -log FIR_50k.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FIR_50k.tcl
+# Log file: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.runs/FIR_50k_synth_1/FIR_50k.vds
+# Journal file: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.runs/FIR_50k_synth_1\vivado.jou
+#-----------------------------------------------------------
+source FIR_50k.tcl -notrace

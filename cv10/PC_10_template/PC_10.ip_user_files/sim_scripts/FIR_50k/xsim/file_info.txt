@@ -1,0 +1,1 @@
+FIR_50k.vhd,vhdl,xil_defaultlib,../../../../SOURCES/IP/FIR_50k/FIR_50/FIR_50k/sim/FIR_50k.vhd,incdir="../../../../SOURCES/IP/FIR_50k/FIR_50/FIR_50k/cmodel"
