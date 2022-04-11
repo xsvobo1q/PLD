@@ -158,26 +158,10 @@ BEGIN
     REPORT line_out.ALL SEVERITY NOTE;
     WRITELINE(File_ID_verificationFile, line_out);
     
-    IF NOT(num_of_faults = 0) THEN
-      
-    END IF;
+    ASSERT NOT(number = correct_sample) REPORT "Error in verififcation - output samples are not correct. Please check output files..." SEVERITY ERROR;
     
     WAIT;
   END PROCESS write_txt;
-  
- -- check_values: PROCESS
- --   FILE File_ID_correct          : TEXT;
- --   FILE File_ID_processed        : TEXT;
-    
- -- BEGIN
- --   FILE_OPEN(File_ID_correct, "D:\Documents\xsvobo1q\PLD\cv10\PC_10_template\SOURCES\FIR_data\FIR_data_out.txt", READ_MODE);
- --   FILE_OPEN(File_ID_processed, "data_out_v1.txt", READ_MODE);
- --   FILE_OPEN(File_ID_verificationFile, "verification_report.txt", WRITE_MODE);
-    
-    
-    
- -- END PROCESS check_values;
-
 
 ----------------------------------------------------------------------------------
 end tb;
