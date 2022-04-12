@@ -2,66 +2,23 @@
 # Vivado v2019.2.1 (64-bit)
 # SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
 # IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
-# Start of session at: Mon Apr 11 08:18:00 2022
-# Process ID: 2804
+# Start of session at: Tue Apr 12 17:37:24 2022
+# Process ID: 1876
 # Current directory: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12196 D:\Documents\xsvobo1q\PLD\cv10\PC_10_template\PC_10.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6744 D:\Documents\xsvobo1q\PLD\cv10\PC_10_template\PC_10.xpr
 # Log file: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/vivado.log
 # Journal file: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.xpr
 update_compile_order -fileset sources_1
-create_ip -name fir_compiler -vendor xilinx.com -library ip -version 7.2 -module_name FIR_50k -dir D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/IP/FIR_50k/FIR_50
-set_property -dict [list CONFIG.Component_Name {FIR_50k} CONFIG.CoefficientSource {COE_File} CONFIG.Coefficient_File {D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/MATLAB/FIR_50k.coe} CONFIG.Sample_Frequency {6.25} CONFIG.Clock_Frequency {50.0} CONFIG.Coefficient_Width {12} CONFIG.Data_Width {9} CONFIG.Output_Rounding_Mode {Truncate_LSBs} CONFIG.Output_Width {9} CONFIG.Coefficient_Sets {1} CONFIG.Coefficient_Sign {Signed} CONFIG.Quantization {Integer_Coefficients} CONFIG.Coefficient_Fractional_Bits {0} CONFIG.Coefficient_Structure {Inferred} CONFIG.Data_Fractional_Bits {0} CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} CONFIG.ColumnConfig {4}] [get_ips FIR_50k]
-generate_target {instantiation_template} [get_files d:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/IP/FIR_50k/FIR_50/FIR_50k/FIR_50k.xci]
-generate_target all [get_files  d:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/IP/FIR_50k/FIR_50/FIR_50k/FIR_50k.xci]
-catch { config_ip_cache -export [get_ips -all FIR_50k] }
-export_ip_user_files -of_objects [get_files d:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/IP/FIR_50k/FIR_50/FIR_50k/FIR_50k.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/IP/FIR_50k/FIR_50/FIR_50k/FIR_50k.xci]
-launch_runs -jobs 2 FIR_50k_synth_1
-export_simulation -of_objects [get_files d:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/IP/FIR_50k/FIR_50/FIR_50k/FIR_50k.xci] -directory D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.ip_user_files/sim_scripts -ip_user_files_dir D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.ip_user_files -ipstatic_source_dir D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.cache/compile_simlib/modelsim} {questa=D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.cache/compile_simlib/questa} {riviera=D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.cache/compile_simlib/riviera} {activehdl=D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
 launch_simulation
 source FIR_50k_TB.tcl
-restart
-run all
-relaunch_sim
-restart
-run all
 close_sim
 launch_simulation
 source FIR_50k_TB.tcl
-relaunch_sim
-restart
-run all
-add_bp {D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/SIM/FIR_50k_TB.vhd} 90
-remove_bps -file {D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/SOURCES/SIM/FIR_50k_TB.vhd} -line 90
 close_sim
 launch_simulation
 source FIR_50k_TB.tcl
-restart
-run all
-run 50 us
-run all
-run all
-restart
-run all
-relaunch_sim
-relaunch_sim
-relaunch_sim
-close_sim
-launch_simulation
-source FIR_50k_TB.tcl
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
 relaunch_sim
 close_sim

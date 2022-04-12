@@ -60,7 +60,7 @@ BEGIN
 
   FIR_50k_i : FIR_50k_wrapper
   GENERIC MAP(
-    SIM_MODEL           => TRUE
+    SIM_MODEL           => FALSE
   )
   PORT MAP(
     aclk                => aclk,
@@ -151,14 +151,15 @@ BEGIN
     FILE_CLOSE(File_ID);
     
     WRITE(line_out, STRING'("") & LF & LF & LF);
-    WRITE(line_out, STRING'("/////////////////////////////////////////////////////////////////") & LF);
-    WRITE(line_out, STRING'("                  !!!!! Number of faults !!!!!") & LF);
-    WRITE(line_out, STRING'("                                "));
+    WRITE(line_out, STRING'("/////////////////////////////////////////////////////////////////") & LF & LF);
+    WRITE(line_out, STRING'("                !!!!! Number of faults !!!!!") & LF);
+    WRITE(line_out, STRING'("                              "));
     WRITE(line_out, INTEGER'image(num_of_faults) & LF & LF & LF);
+    WRITE(line_out, STRING'("/////////////////////////////////////////////////////////////////") & LF);
     REPORT line_out.ALL SEVERITY NOTE;
     WRITELINE(File_ID_verificationFile, line_out);
     
-    ASSERT NOT(number = correct_sample) REPORT "Error in verififcation - output samples are not correct. Please check output files..." SEVERITY ERROR;
+    ASSERT (num_of_faults > 0) REPORT "Error in verififcation - output samples are not correct. Please check output files..." SEVERITY FAILURE;
     
     WAIT;
   END PROCESS write_txt;
