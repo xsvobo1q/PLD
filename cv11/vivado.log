@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Apr 25 08:22:07 2022
+# Process ID: 9284
+# Current directory: D:/Documents/xsvobo1q/PLD/cv11
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11140 D:\Documents\xsvobo1q\PLD\cv11\PC_11.xpr
+# Log file: D:/Documents/xsvobo1q/PLD/cv11/vivado.log
+# Journal file: D:/Documents/xsvobo1q/PLD/cv11\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Documents/xsvobo1q/PLD/cv11/PC_11.xpr
+INFO: [Project 1-313] Project file moved from 'C:/project/MPC_PLD/2022/PC_11/PC_11_reference' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'D:/Documents/xsvobo1q/PLD/cv11/PC_11.ip_user_files', nor could it be found using path 'C:/project/MPC_PLD/2022/PC_11/PC_11_reference/PC_11.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Appz/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 781.832 ; gain = 125.418
+update_compile_order -fileset sources_1
+add_files -norecurse D:/Documents/xsvobo1q/PLD/cv8/PC_08_templates/SOURCES/pwm_driver.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Apr 25 09:24:25 2022] Launched synth_1...
+Run output will be captured here: D:/Documents/xsvobo1q/PLD/cv11/PC_11.runs/synth_1/runme.log
+[Mon Apr 25 09:24:25 2022] Launched impl_1...
+Run output will be captured here: D:/Documents/xsvobo1q/PLD/cv11/PC_11.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Apr 25 09:48:49 2022] Launched synth_1...
+Run output will be captured here: D:/Documents/xsvobo1q/PLD/cv11/PC_11.runs/synth_1/runme.log
+[Mon Apr 25 09:48:49 2022] Launched impl_1...
+Run output will be captured here: D:/Documents/xsvobo1q/PLD/cv11/PC_11.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.2.1
+  **** Build date : Dec  5 2019 at 05:23:28
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2019.2.0
+  **** Build date : Nov 07 2019-06:28:22
+    ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 954.324 ; gain = 13.680
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210308A64E09
+open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2185.809 ; gain = 1231.484
+set_property PROGRAM.FILE {D:/Documents/xsvobo1q/PLD/cv11/PC_11.runs/impl_1/rp_top.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {D:/Documents/xsvobo1q/PLD/cv11/PC_11.runs/impl_1/rp_top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 25 10:11:12 2022...
