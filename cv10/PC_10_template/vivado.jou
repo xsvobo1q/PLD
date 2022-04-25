@@ -2,10 +2,10 @@
 # Vivado v2019.2.1 (64-bit)
 # SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
 # IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
-# Start of session at: Tue Apr 12 17:37:24 2022
-# Process ID: 1876
+# Start of session at: Mon Apr 25 09:55:01 2022
+# Process ID: 8016
 # Current directory: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6744 D:\Documents\xsvobo1q\PLD\cv10\PC_10_template\PC_10.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1112 D:\Documents\xsvobo1q\PLD\cv10\PC_10_template\PC_10.xpr
 # Log file: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/vivado.log
 # Journal file: D:/Documents/xsvobo1q/PLD/cv10/PC_10_template\vivado.jou
 #-----------------------------------------------------------
@@ -14,11 +14,4 @@ open_project D:/Documents/xsvobo1q/PLD/cv10/PC_10_template/PC_10.xpr
 update_compile_order -fileset sources_1
 launch_simulation
 source FIR_50k_TB.tcl
-close_sim
-launch_simulation
-source FIR_50k_TB.tcl
-close_sim
-launch_simulation
-source FIR_50k_TB.tcl
-relaunch_sim
 close_sim
