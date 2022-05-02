@@ -35,7 +35,7 @@ ENTITY watchdog IS
   PORT (
     clk     : IN STD_LOGIC;
     ce      : IN STD_LOGIC;
-    rst     : IN STD_LOGIC;
+    wd_en   : IN STD_LOGIC;
     wd_time : OUT STD_LOGIC := '0'
   );
 END watchdog;
@@ -49,10 +49,10 @@ BEGIN
   BEGIN
     IF rising_edge(clk) THEN
       
-      IF rst = '1' THEN
+      IF wd_en = '0' THEN
         cnt_sig <= 1;
         wd_time <= '0';
-      ELSIF ce = '1' THEN
+      ELSIF ce = '1' AND wd_en = '1' THEN
       
         cnt_sig <= cnt_sig + 1;
         

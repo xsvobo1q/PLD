@@ -52,7 +52,7 @@ ARCHITECTURE Structural OF rp_top IS
       state_rst  : IN STD_LOGIC;
       clk        : IN STD_LOGIC;
       state_out  : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := "00000000";
-      state_chng : OUT STD_LOGIC
+      wd_en      : OUT STD_LOGIC := '0'
     );
   END COMPONENT key_fsm;
   
@@ -60,8 +60,8 @@ ARCHITECTURE Structural OF rp_top IS
     PORT(
       clk     : IN STD_LOGIC;
       ce      : IN STD_LOGIC;
-      rst     : IN STD_LOGIC;
-      wd_time : OUT STD_LOGIC
+      wd_en   : IN STD_LOGIC;
+      wd_time : OUT STD_LOGIC := '0'
     );
   END COMPONENT watchdog;
 
@@ -120,14 +120,14 @@ BEGIN
       state_rst  => wd_time_sig, 
       clk        => clk,
       state_out  => led_o,
-      state_chng => wd_rst
+      wd_en      => wd_rst
     );
     
     watchdog_i : watchdog
       PORT MAP(
         clk     => clk,
         ce      => ce_100Hz,
-        rst     => wd_rst,
+        wd_en   => wd_rst,
         wd_time => wd_time_sig
       );
       

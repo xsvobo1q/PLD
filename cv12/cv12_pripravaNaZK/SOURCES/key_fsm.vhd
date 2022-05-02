@@ -39,8 +39,8 @@ ENTITY key_fsm IS
    btn_4      : IN STD_LOGIC;
    state_rst  : IN STD_LOGIC;
    clk        : IN STD_LOGIC;
-   state_out  : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := "10101010";
-   state_chng : OUT STD_LOGIC
+   state_out  : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := "00000000";
+   wd_en      : OUT STD_LOGIC := '0'
  );
 END key_fsm;
 
@@ -57,22 +57,22 @@ BEGIN
   BEGIN
     IF rising_edge(clk) THEN
       
-      state_out <= "0000" & state_ind;
-      
       IF pres_state = st8 THEN
         state_out <= "1111" & state_ind;
+      ELSE
+        state_out <= "0000" & state_ind;
       END IF;
       
-      IF state_rst = '1' AND pres_state /= st0 THEN
+      IF state_rst = '1' THEN
         next_state <= st0;
       ELSE
         pres_state <= next_state;
       END IF;
       
-      IF pres_state = next_state THEN
-        state_chng <= '0';
+      IF pres_state = next_state AND (pres_state /= st0 OR pres_state /= st8) THEN
+        wd_en <= '1';
       ELSE
-        state_chng <= '1';
+        wd_en <= '0';
       END IF;
       
     END IF;
@@ -80,11 +80,14 @@ BEGIN
   
   PROCESS (btn_1, btn_2, btn_3, btn_4, pres_state)
   BEGIN
-  
+    
+    wd_en <= '1';
+    
     CASE pres_state IS
     
       WHEN st0 =>
         state_ind <= "0000";
+        wd_en <= '0';
         IF btn_1 = '1' THEN
           next_state <= st1;
         ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
@@ -164,6 +167,7 @@ BEGIN
         END IF;
       
       WHEN st8 =>
+        wd_en <= '0';
         state_ind <= "1000";
         IF btn_1 = '1' OR btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
           next_state <= st0;
