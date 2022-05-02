@@ -2,12 +2,12 @@
 # Vivado v2019.2.1 (64-bit)
 # SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
 # IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
-# Start of session at: Mon May  2 10:28:58 2022
-# Process ID: 2000
-# Current directory: D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1
+# Start of session at: Mon May  2 19:54:45 2022
+# Process ID: 6292
+# Current directory: D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1
 # Command line: vivado.exe -log rp_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rp_top.tcl
-# Log file: D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/rp_top.vds
-# Journal file: D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1\vivado.jou
+# Log file: D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/rp_top.vds
+# Journal file: D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source rp_top.tcl -notrace
 Command: synth_design -top rp_top -part xc7z010clg400-1
@@ -16,79 +16,55 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1060 
+INFO: Helper process launched with PID 5248 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 892.414 ; gain = 235.582
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 891.887 ; gain = 234.312
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'rp_top' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'rp_top' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:16]
 	Parameter DIV_FACT bound to: 500000 - type: integer 
-INFO: [Synth 8-3491] module 'ce_gen' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd:6' bound to instance 'ce_gen_i' of component 'ce_gen' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:83]
-INFO: [Synth 8-638] synthesizing module 'ce_gen' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd:20]
+INFO: [Synth 8-3491] module 'ce_gen' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd:6' bound to instance 'ce_gen_i' of component 'ce_gen' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'ce_gen' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd:20]
 	Parameter DIV_FACT bound to: 500000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ce_gen' (1#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'ce_gen' (1#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd:20]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:97]
-INFO: [Synth 8-638] synthesizing module 'btn_in' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:49]
+INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'btn_in' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:49]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'sync_reg' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:34' bound to instance 'sync_reg_i' of component 'sync_reg' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'sync_reg' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:42]
-INFO: [Synth 8-5534] Detected attribute (* shreg_extract = "NO" *) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:38]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:38]
-INFO: [Synth 8-5534] Detected attribute (* shreg_extract = "NO" *) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:44]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'sync_reg' (2#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:42]
+INFO: [Synth 8-3491] module 'sync_reg' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:34' bound to instance 'sync_reg_i' of component 'sync_reg' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'sync_reg' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:42]
+INFO: [Synth 8-5534] Detected attribute (* shreg_extract = "NO" *) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:38]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:38]
+INFO: [Synth 8-5534] Detected attribute (* shreg_extract = "NO" *) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:44]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'sync_reg' (2#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd:42]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd:34' bound to instance 'debouncer_i' of component 'debouncer' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'debouncer' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd:46]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd:34' bound to instance 'debouncer_i' of component 'debouncer' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd:46]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debouncer' (3#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd:46]
-INFO: [Synth 8-3491] module 'edge_detector' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd:34' bound to instance 'edge_detector_i' of component 'edge_detector' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:104]
-INFO: [Synth 8-638] synthesizing module 'edge_detector' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'edge_detector' (4#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'btn_in' (5#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (3#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd:46]
+INFO: [Synth 8-3491] module 'edge_detector' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd:34' bound to instance 'edge_detector_i' of component 'edge_detector' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'edge_detector' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'edge_detector' (4#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'btn_in' (5#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:49]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:97]
+INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:102]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:97]
+INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:102]
 	Parameter DEB_PERIOD bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:97]
-INFO: [Synth 8-3491] module 'key_fsm' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:34' bound to instance 'key_fsm_i' of component 'key_fsm' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'key_fsm' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'key_fsm' (6#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:47]
-INFO: [Synth 8-3491] module 'watchdog' declared at 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd:34' bound to instance 'watchdog_i' of component 'watchdog' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:126]
-INFO: [Synth 8-638] synthesizing module 'watchdog' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'watchdog' (7#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd:43]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[1]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[2]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[3]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[4]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[5]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[6]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 1st driver pin 'rp_top:/key_fsm_i/state_out[7]' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-5.0, D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd-16.0 is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:5]
-WARNING: [Synth 8-3848] Net disp_seg_o in module/entity rp_top does not have driver. [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:11]
-WARNING: [Synth 8-3848] Net disp_dig_o in module/entity rp_top does not have driver. [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'rp_top' (8#1) [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:16]
-WARNING: [Synth 8-3917] design rp_top has port led_o[7] driven by constant 0
-WARNING: [Synth 8-3917] design rp_top has port led_o[6] driven by constant 0
-WARNING: [Synth 8-3917] design rp_top has port led_o[5] driven by constant 0
-WARNING: [Synth 8-3917] design rp_top has port led_o[4] driven by constant 0
+INFO: [Synth 8-3491] module 'btn_in' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd:34' bound to instance 'btn_in_inst' of component 'btn_in' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:102]
+INFO: [Synth 8-3491] module 'key_fsm' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:34' bound to instance 'key_fsm_i' of component 'key_fsm' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'key_fsm' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'key_fsm' (6#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:49]
+INFO: [Synth 8-3491] module 'watchdog' declared at 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd:34' bound to instance 'watchdog_i' of component 'watchdog' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:133]
+INFO: [Synth 8-638] synthesizing module 'watchdog' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'watchdog' (7#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd:44]
+WARNING: [Synth 8-3848] Net disp_seg_o in module/entity rp_top does not have driver. [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:11]
+WARNING: [Synth 8-3848] Net disp_dig_o in module/entity rp_top does not have driver. [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'rp_top' (8#1) [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd:16]
 WARNING: [Synth 8-3917] design rp_top has port led_o[3] driven by constant 0
 WARNING: [Synth 8-3917] design rp_top has port led_o[2] driven by constant 0
 WARNING: [Synth 8-3917] design rp_top has port led_o[1] driven by constant 0
+WARNING: [Synth 8-3331] design key_fsm has unconnected port ce
 WARNING: [Synth 8-3331] design rp_top has unconnected port disp_seg_o[7]
 WARNING: [Synth 8-3331] design rp_top has unconnected port disp_seg_o[6]
 WARNING: [Synth 8-3331] design rp_top has unconnected port disp_seg_o[5]
@@ -107,7 +83,7 @@ WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[2]
 WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[1]
 WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 966.211 ; gain = 309.379
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 965.809 ; gain = 308.234
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -120,45 +96,61 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 966.211 ; gain = 309.379
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 965.809 ; gain = 308.234
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 966.211 ; gain = 309.379
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 965.809 ; gain = 308.234
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 966.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 965.809 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]
-Finished Parsing XDC File [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rp_top_propImpl.xdc].
+Parsing XDC File [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]
+Finished Parsing XDC File [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rp_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/rp_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1066.961 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1063.816 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1066.961 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1063.816 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1063.816 ; gain = 406.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1063.816 ; gain = 406.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1063.816 ; gain = 406.242
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'pres_state_reg' in module 'key_fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                     st0 |                        000000001 |                             0000
+                     st1 |                        000000010 |                             0001
+                     st2 |                        000000100 |                             0010
+                     st3 |                        000001000 |                             0011
+                     st4 |                        000010000 |                             0100
+                     st5 |                        000100000 |                             0101
+                     st6 |                        001000000 |                             0110
+                     st7 |                        010000000 |                             0111
+                     st8 |                        100000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pres_state_reg' using encoding 'one-hot' in module 'key_fsm'
+WARNING: [Synth 8-327] inferring latch for variable 'change_reg' [D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:69]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1063.816 ; gain = 406.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -172,22 +164,19 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     19 Bit       Adders := 1     
-	   2 Input      9 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
 +---Registers : 
 	               19 Bit    Registers := 1     
-	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 35    
+	               11 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 36    
 +---Muxes : 
 	   2 Input     19 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 2     
-	   3 Input      3 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 2     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 23    
+	   2 Input     11 Bit        Muxes := 3     
+	   9 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 28    
+	   9 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -222,25 +211,23 @@ Detailed RTL Component Info :
 Module key_fsm 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 2     
-	   3 Input      3 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 2     
-	   3 Input      2 Bit        Muxes := 1     
+	   9 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 4     
+	   9 Input      1 Bit        Muxes := 2     
 Module watchdog 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      9 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
 +---Registers : 
-	                9 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -257,10 +244,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design rp_top has port led_o[7] driven by constant 0
-WARNING: [Synth 8-3917] design rp_top has port led_o[6] driven by constant 0
-WARNING: [Synth 8-3917] design rp_top has port led_o[5] driven by constant 0
-WARNING: [Synth 8-3917] design rp_top has port led_o[4] driven by constant 0
 WARNING: [Synth 8-3917] design rp_top has port led_o[3] driven by constant 0
 WARNING: [Synth 8-3917] design rp_top has port led_o[2] driven by constant 0
 WARNING: [Synth 8-3917] design rp_top has port led_o[1] driven by constant 0
@@ -281,24 +264,12 @@ WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[3]
 WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[2]
 WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[1]
 WARNING: [Synth 8-3331] design rp_top has unconnected port sw_i[0]
-INFO: [Synth 8-3886] merging instance 'key_fsm_i/pres_state_reg[3]' (FDE) to 'key_fsm_i/pres_state_reg[2]'
-INFO: [Synth 8-3886] merging instance 'key_fsm_i/pres_state_reg[0]' (FDE) to 'key_fsm_i/pres_state_reg[2]'
-INFO: [Synth 8-3886] merging instance 'key_fsm_i/pres_state_reg[1]' (FDE) to 'key_fsm_i/pres_state_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\key_fsm_i/pres_state_reg[2] )
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'key_fsm_i/next_state_reg[3]/Q' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'key_fsm_i/next_state_reg[2]/Q' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'key_fsm_i/next_state_reg[1]/Q' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'key_fsm_i/next_state_reg[0]/Q' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd:67]
+INFO: [Synth 8-3886] merging instance 'watchdog_i/led_timing_reg' (FDSE) to 'watchdog_i/wd_time_reg'
+INFO: [Synth 8-3886] merging instance 'key_fsm_i/state_out_reg[0]' (FDS) to 'key_fsm_i/state_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'key_fsm_i/state_out_reg[1]' (FDS) to 'key_fsm_i/state_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'key_fsm_i/state_out_reg[2]' (FDS) to 'key_fsm_i/state_out_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1063.816 ; gain = 406.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -310,13 +281,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1063.816 ; gain = 406.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1066.961 ; gain = 410.129
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1070.375 ; gain = 412.801
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -328,7 +299,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1067.699 ; gain = 410.867
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1071.672 ; gain = 414.098
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -352,13 +323,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -377,25 +348,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -412,58 +383,70 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |     5|
-|3     |LUT1   |     2|
-|4     |LUT2   |     1|
-|5     |LUT3   |     3|
-|6     |LUT4   |     6|
-|7     |LUT5   |     6|
-|8     |LUT6   |     2|
-|9     |FDRE   |    38|
-|10    |IBUF   |     5|
-|11    |OBUF   |     8|
-|12    |OBUFT  |    13|
+|2     |CARRY4 |    37|
+|3     |LUT1   |     5|
+|4     |LUT2   |     9|
+|5     |LUT3   |     4|
+|6     |LUT4   |    19|
+|7     |LUT5   |    27|
+|8     |LUT6   |    29|
+|9     |FDRE   |   185|
+|10    |FDSE   |     6|
+|11    |LD     |     1|
+|12    |IBUF   |     5|
+|13    |OBUF   |     8|
+|14    |OBUFT  |    13|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------------------------+-----------+------+
-|      |Instance                      |Module     |Cells |
-+------+------------------------------+-----------+------+
-|1     |top                           |           |    90|
-|2     |  ce_gen_i                    |ce_gen     |    32|
-|3     |  \gen_btn_in[0].btn_in_inst  |btn_in     |     2|
-|4     |    sync_reg_i                |sync_reg_5 |     2|
-|5     |  \gen_btn_in[1].btn_in_inst  |btn_in_0   |     2|
-|6     |    sync_reg_i                |sync_reg_4 |     2|
-|7     |  \gen_btn_in[2].btn_in_inst  |btn_in_1   |     2|
-|8     |    sync_reg_i                |sync_reg_3 |     2|
-|9     |  \gen_btn_in[3].btn_in_inst  |btn_in_2   |     2|
-|10    |    sync_reg_i                |sync_reg   |     2|
-|11    |  watchdog_i                  |watchdog   |    23|
-+------+------------------------------+-----------+------+
++------+------------------------------+-----------------+------+
+|      |Instance                      |Module           |Cells |
++------+------------------------------+-----------------+------+
+|1     |top                           |                 |   349|
+|2     |  ce_gen_i                    |ce_gen           |    31|
+|3     |  \gen_btn_in[0].btn_in_inst  |btn_in           |    57|
+|4     |    debouncer_i               |debouncer_9      |    53|
+|5     |    edge_detector_i           |edge_detector_10 |     2|
+|6     |    sync_reg_i                |sync_reg_11      |     2|
+|7     |  \gen_btn_in[1].btn_in_inst  |btn_in_0         |    57|
+|8     |    debouncer_i               |debouncer_6      |    53|
+|9     |    edge_detector_i           |edge_detector_7  |     2|
+|10    |    sync_reg_i                |sync_reg_8       |     2|
+|11    |  \gen_btn_in[2].btn_in_inst  |btn_in_1         |    58|
+|12    |    debouncer_i               |debouncer_3      |    53|
+|13    |    edge_detector_i           |edge_detector_4  |     3|
+|14    |    sync_reg_i                |sync_reg_5       |     2|
+|15    |  \gen_btn_in[3].btn_in_inst  |btn_in_2         |    57|
+|16    |    debouncer_i               |debouncer        |    53|
+|17    |    edge_detector_i           |edge_detector    |     2|
+|18    |    sync_reg_i                |sync_reg         |     2|
+|19    |  key_fsm_i                   |key_fsm          |    31|
+|20    |  watchdog_i                  |watchdog         |    31|
++------+------------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 12 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1074.520 ; gain = 316.938
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1074.520 ; gain = 417.688
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 1077.445 ; gain = 321.863
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1077.445 ; gain = 419.871
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1084.602 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1077.445 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1088.781 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1088.168 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-46 Infos, 50 Warnings, 33 Critical Warnings and 0 Errors encountered.
+48 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1088.781 ; gain = 729.324
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1088.781 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1088.168 ; gain = 729.152
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1088.168 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/rp_top.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/rp_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file rp_top_utilization_synth.rpt -pb rp_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May  2 10:29:44 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon May  2 19:55:33 2022...

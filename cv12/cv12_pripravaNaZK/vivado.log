@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon May  2 18:11:51 2022
+# Process ID: 7824
+# Current directory: D:/Documents/PLD/cv12/cv12_pripravaNaZK
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4524 D:\Documents\PLD\cv12\cv12_pripravaNaZK\cv12_pripravaNaZK.xpr
+# Log file: D:/Documents/PLD/cv12/cv12_pripravaNaZK/vivado.log
+# Journal file: D:/Documents/PLD/cv12/cv12_pripravaNaZK\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.ip_user_files', nor could it be found using path 'D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Appz/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 828.035 ; gain = 177.066
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/seg_disp_driver.dcp] -no_script -reset -force -quiet
+remove_files  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/seg_disp_driver.dcp
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 3
+[Mon May  2 18:18:36 2022] Launched synth_1...
+Run output will be captured here: D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/runme.log
+[Mon May  2 18:18:36 2022] Launched impl_1...
+Run output will be captured here: D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/impl_1/runme.log

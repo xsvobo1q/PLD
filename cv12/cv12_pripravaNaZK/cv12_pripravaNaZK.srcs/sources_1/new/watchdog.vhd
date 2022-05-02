@@ -36,33 +36,42 @@ ENTITY watchdog IS
     clk     : IN STD_LOGIC;
     ce      : IN STD_LOGIC;
     wd_en   : IN STD_LOGIC;
+    wd_rst  : IN STD_LOGIC;
     wd_time : OUT STD_LOGIC := '0'
   );
 END watchdog;
 
 ARCHITECTURE Behavioral OF watchdog IS
 
-  SIGNAL cnt_sig  :  POSITIVE RANGE 1 TO 400 := 1;
+  SIGNAL cnt_sig  :  POSITIVE RANGE 1 TO 1501 := 1;
+  SIGNAL led_timing : STD_LOGIC := '0';
 
 BEGIN
   PROCESS (clk)
   BEGIN
     IF rising_edge(clk) THEN
-      
-      IF wd_en = '0' THEN
+    
+      IF wd_rst = '1' THEN
         cnt_sig <= 1;
-        wd_time <= '0';
-      ELSIF ce = '1' AND wd_en = '1' THEN
-      
-        cnt_sig <= cnt_sig + 1;
-        
-        IF cnt_sig >= 101 THEN
-          wd_time <= '1';
-        ELSIF cnt_sig >= 301 THEN
-          wd_time <= '0';
-          cnt_sig <= 1;
+      END IF;
+    
+      IF ce = '1' THEN
+        IF wd_en = '1' THEN
+          cnt_sig <= cnt_sig + 1;
+          IF cnt_sig >= 100 THEN
+            wd_time <= '1';
+            led_timing <= '1';
+          END IF;
+        ELSE
+          IF led_timing = '1' THEN
+            cnt_sig <= cnt_sig + 1;
+            IF cnt_sig >= 300 THEN
+              cnt_sig <= 1;
+              wd_time <= '0';
+              led_timing <= '0';
+            END IF;
+          END IF;
         END IF;
-        
       END IF;
     END IF;
   END PROCESS;

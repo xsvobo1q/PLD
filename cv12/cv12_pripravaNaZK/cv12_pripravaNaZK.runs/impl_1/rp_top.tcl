@@ -70,12 +70,12 @@ set rc [catch {
   create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/wt [current_project]
-  set_property parent.project_path D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.xpr [current_project]
-  set_property ip_output_repo D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/wt [current_project]
+  set_property parent.project_path D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.xpr [current_project]
+  set_property ip_output_repo D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/rp_top.dcp
-  read_xdc D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc
+  add_files -quiet D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/synth_1/rp_top.dcp
+  read_xdc D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc
   link_design -top rp_top -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]

@@ -39,8 +39,10 @@ ENTITY key_fsm IS
    btn_4      : IN STD_LOGIC;
    state_rst  : IN STD_LOGIC;
    clk        : IN STD_LOGIC;
-   state_out  : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := "00000000";
-   wd_en      : OUT STD_LOGIC := '0'
+   ce         : IN STD_LOGIC;
+   state_out  : OUT STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+   wd_en      : OUT STD_LOGIC := '0';
+   wd_rst     : OUT STD_LOGIC := '0'
  );
 END key_fsm;
 
@@ -50,132 +52,155 @@ ARCHITECTURE Behavioral OF key_fsm IS
   SIGNAL pres_state     : t_state := st0;
   SIGNAL next_state     : t_state;
   SIGNAL state_ind      : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";
+  SIGNAL change         : STD_LOGIC;
   
 BEGIN
 
   PROCESS (clk)
   BEGIN
-    IF rising_edge(clk) THEN
-      
+    IF rising_edge(clk) THEN  
       IF pres_state = st8 THEN
-        state_out <= "1111" & state_ind;
+        state_out <= "1111";
       ELSE
-        state_out <= "0000" & state_ind;
+        state_out <= "0000";
       END IF;
-      
-      IF state_rst = '1' THEN
-        next_state <= st0;
-      ELSE
-        pres_state <= next_state;
-      END IF;
-      
-      IF pres_state = next_state AND (pres_state /= st0 OR pres_state /= st8) THEN
-        wd_en <= '1';
-      ELSE
-        wd_en <= '0';
-      END IF;
+
+      pres_state <= next_state;
+      wd_rst <= change;
       
     END IF;
   END PROCESS;
   
-  PROCESS (btn_1, btn_2, btn_3, btn_4, pres_state)
+  PROCESS (btn_1, btn_2, btn_3, btn_4, pres_state, state_rst)
   BEGIN
     
-    wd_en <= '1';
+    IF state_rst = '1' THEN
+      next_state <= st0;
+      wd_en <= '0';
+    ELSE
+      CASE pres_state IS
     
-    CASE pres_state IS
+        WHEN st0 =>
+          state_ind <= "0000";
+          wd_en <= '0';
+          IF btn_1 = '1' THEN
+            next_state <= st1;
+          ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
+            next_state <= st0;
+          ELSE 
+            next_state <= st0;
+          END IF;
+      
+        WHEN st1 =>
+          state_ind <= "0001";
+          wd_en <= '1';
+          IF btn_2 = '1' THEN
+            next_state <= st2;
+            change <= '1';
+          ELSIF btn_1 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
+            change <= '1';
+            next_state <= st0;
+          ELSE 
+            next_state <= st1;
+            change <= '0';
+          END IF;
+      
+        WHEN st2 =>
+          state_ind <= "0010";
+          wd_en <= '1';
+          IF btn_3 = '1' THEN
+            next_state <= st3;
+            change <= '1';
+          ELSIF btn_2 = '1' OR btn_1 = '1' OR btn_4 = '1' THEN
+            next_state <= st0;
+            change <= '1';
+          ELSE 
+            next_state <= st2;
+            change <= '0';
+          END IF;
+      
+        WHEN st3 =>
+          state_ind <= "0011";
+          wd_en <= '1';
+          IF btn_4 = '1' THEN
+            next_state <= st4;
+            change <= '1';
+          ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_1 = '1' THEN
+            next_state <= st0;
+            change <= '1';
+          ELSE 
+            next_state <= st3;
+            change <= '0';
+          END IF;
+      
+        WHEN st4 =>
+          state_ind <= "0100";
+          wd_en <= '1';
+          IF btn_4 = '1' THEN
+            next_state <= st5;
+            change <= '1';
+          ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_1 = '1' THEN
+            next_state <= st0;
+            change <= '1';
+          ELSE 
+            next_state <= st4;
+            change <= '0';
+          END IF;
+      
+        WHEN st5 =>
+          state_ind <= "0101";
+          wd_en <= '1';
+          IF btn_3 = '1' THEN
+            next_state <= st6;
+            change <= '1';
+          ELSIF btn_2 = '1' OR btn_1 = '1' OR btn_4 = '1' THEN
+            next_state <= st0;
+            change <= '1';
+          ELSE 
+            next_state <= st5;
+            change <= '0';
+          END IF;
+      
+        WHEN st6 =>
+          state_ind <= "0110";
+          wd_en <= '1';
+          IF btn_2 = '1' THEN
+            next_state <= st7;
+            change <= '1';
+          ELSIF btn_1 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
+            next_state <= st0;
+            change <= '1';
+          ELSE 
+            next_state <= st6;
+            change <= '0';
+          END IF;
+      
+        WHEN st7 =>
+          state_ind <= "0111";
+          wd_en <= '1';
+          IF btn_1 = '1' THEN
+            next_state <= st8;
+            change <= '1';
+          ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
+            next_state <= st0;
+            change <= '1';
+          ELSE 
+            next_state <= st7;
+            change <= '0';
+          END IF;
+      
+        WHEN st8 =>
+          wd_en <= '0';
+          state_ind <= "1000";
+          IF btn_1 = '1' OR btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
+            next_state <= st0;
+          ELSE 
+            next_state <= st8;
+          END IF;
+      
+      END CASE;
+    END IF;
     
-      WHEN st0 =>
-        state_ind <= "0000";
-        wd_en <= '0';
-        IF btn_1 = '1' THEN
-          next_state <= st1;
-        ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st0;
-        END IF;
-      
-      WHEN st1 =>
-        state_ind <= "0001";
-        IF btn_2 = '1' THEN
-          next_state <= st2;
-        ELSIF btn_1 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st1;
-        END IF;
-      
-      WHEN st2 =>
-        state_ind <= "0010";
-        IF btn_3 = '1' THEN
-          next_state <= st3;
-        ELSIF btn_2 = '1' OR btn_1 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st2;
-        END IF;
-      
-      WHEN st3 =>
-        state_ind <= "0011";
-        IF btn_4 = '1' THEN
-          next_state <= st4;
-        ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_1 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st3;
-        END IF;
-      
-      WHEN st4 =>
-        state_ind <= "0100";
-        IF btn_4 = '1' THEN
-          next_state <= st5;
-        ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_1 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st4;
-        END IF;
-      
-      WHEN st5 =>
-        state_ind <= "0101";
-        IF btn_3 = '1' THEN
-          next_state <= st6;
-        ELSIF btn_2 = '1' OR btn_1 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st5;
-        END IF;
-      
-      WHEN st6 =>
-        state_ind <= "0110";
-        IF btn_2 = '1' THEN
-          next_state <= st7;
-        ELSIF btn_1 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st6;
-        END IF;
-      
-      WHEN st7 =>
-        state_ind <= "0111";
-        IF btn_1 = '1' THEN
-          next_state <= st8;
-        ELSIF btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st7;
-        END IF;
-      
-      WHEN st8 =>
-        wd_en <= '0';
-        state_ind <= "1000";
-        IF btn_1 = '1' OR btn_2 = '1' OR btn_3 = '1' OR btn_4 = '1' THEN
-          next_state <= st0;
-        ELSE 
-          next_state <= st8;
-        END IF;
-      
-    END CASE;
   END PROCESS;
 END Behavioral;
 

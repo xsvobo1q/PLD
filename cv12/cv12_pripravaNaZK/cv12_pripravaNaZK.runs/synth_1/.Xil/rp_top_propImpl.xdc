@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc rfile:../../../SOURCES/rp_top.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc rfile:../../../SOURCES/rp_top.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN P15 [get_ports {btn_i[3]}]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]

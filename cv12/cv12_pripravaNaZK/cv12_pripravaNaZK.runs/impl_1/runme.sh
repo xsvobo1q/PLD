@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/impl_1'
+HD_PWD='D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

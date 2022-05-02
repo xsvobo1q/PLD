@@ -51,8 +51,10 @@ ARCHITECTURE Structural OF rp_top IS
       btn_4      : IN STD_LOGIC;
       state_rst  : IN STD_LOGIC;
       clk        : IN STD_LOGIC;
-      state_out  : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := "00000000";
-      wd_en      : OUT STD_LOGIC := '0'
+      ce         : IN STD_LOGIC;
+      state_out  : OUT STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+      wd_en      : OUT STD_LOGIC := '0';
+      wd_rst     : OUT STD_LOGIC := '0'
     );
   END COMPONENT key_fsm;
   
@@ -61,6 +63,7 @@ ARCHITECTURE Structural OF rp_top IS
       clk     : IN STD_LOGIC;
       ce      : IN STD_LOGIC;
       wd_en   : IN STD_LOGIC;
+      wd_rst  : IN STD_LOGIC;
       wd_time : OUT STD_LOGIC := '0'
     );
   END COMPONENT watchdog;
@@ -70,6 +73,8 @@ ARCHITECTURE Structural OF rp_top IS
   SIGNAL ce_100Hz           : STD_LOGIC;
   SIGNAL wd_time_sig        : STD_LOGIC;
   SIGNAL wd_rst             : STD_LOGIC;
+  SIGNAL wd_en              : STD_LOGIC;
+  SIGNAL state_sig          : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
   SIGNAL btn_debounced      : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
   SIGNAL btn_edge_pos       : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
   SIGNAL btn_edge_neg       : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
@@ -119,19 +124,22 @@ BEGIN
       btn_4      => btn_edge_pos(3),   
       state_rst  => wd_time_sig, 
       clk        => clk,
-      state_out  => led_o,
-      wd_en      => wd_rst
+      ce         => ce_100Hz,
+      state_out  => state_sig,
+      wd_en      => wd_en,
+      wd_rst     => wd_rst
     );
     
     watchdog_i : watchdog
       PORT MAP(
         clk     => clk,
         ce      => ce_100Hz,
-        wd_en   => wd_rst,
+        wd_rst  => wd_rst,
+        wd_en   => wd_en,
         wd_time => wd_time_sig
       );
       
-    led_o <= "0000000" & wd_time_sig;  
+    led_o <= state_sig & "000" & wd_time_sig;  
 ----------------------------------------------------------------------------------
 END Structural;
 ----------------------------------------------------------------------------------

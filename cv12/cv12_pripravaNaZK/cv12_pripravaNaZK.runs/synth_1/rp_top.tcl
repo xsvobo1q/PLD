@@ -24,21 +24,21 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/wt [current_project]
-set_property parent.project_path D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.xpr [current_project]
+set_property webtalk.parent_dir D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/wt [current_project]
+set_property parent.project_path D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo d:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/ip [current_project]
+set_property ip_output_repo d:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd
-  D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/btn_in.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/ce_gen.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/debouncer.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/edge_detector.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/key_fsm.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/sync_reg.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/cv12_pripravaNaZK.srcs/sources_1/new/watchdog.vhd
+  D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,8 +48,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc
-set_property used_in_implementation false [get_files D:/Documents/xsvobo1q/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]
+read_xdc D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc
+set_property used_in_implementation false [get_files D:/Documents/PLD/cv12/cv12_pripravaNaZK/SOURCES/rp_top.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
